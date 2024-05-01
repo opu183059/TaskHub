@@ -22,7 +22,7 @@ const Navbar = () => {
         <nav className='sticky top-0 z-10 shadow-md bg-white'>
             <div className='py-4 flex justify-between items-center max-w-6xl mx-auto'>
                 <div className='logo'>
-                    <h4 className='font-bold'>Task <span className='uppercase text-violet-600'>Hub</span> </h4>
+                    <Link href={"/"} className='font-bold'>Task <span className='uppercase text-violet-600'>Hub</span> </Link>
                 </div>
                 <ul className='flex gap-4'>
                     {menu.map((item) => (

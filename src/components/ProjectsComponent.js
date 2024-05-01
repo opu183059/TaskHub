@@ -1,6 +1,4 @@
 "use client"
-
-import { Button, Card, Space } from "antd";
 import { useQuery } from "react-query";
 import ProjectCard from "./Cards/ProjectCard";
 

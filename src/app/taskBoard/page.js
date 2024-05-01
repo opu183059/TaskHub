@@ -14,28 +14,6 @@ const TaskBoard = () => {
 
 
     return (
-        // <DndProvider backend={HTML5Backend}>
-        //     <div style={{ display: 'flex', justifyContent: 'space-around', padding: 20 }}>
-        //         <div>
-        //             <h3>To Do</h3>
-        //             {tasks.filter(task => task.status === 'todo').map((task, index) => (
-        //                 <Task key={task.id} task={task} index={index} moveTask={moveTask} />
-        //             ))}
-        //         </div>
-        //         <div>
-        //             <h3>In Progress</h3>
-        //             {tasks.filter(task => task.status === 'inProgress').map((task, index) => (
-        //                 <Task key={task.id} task={task} index={index} moveTask={moveTask} />
-        //             ))}
-        //         </div>
-        //         <div>
-        //             <h3>Done</h3>
-        //             {tasks.filter(task => task.status === 'done').map((task, index) => (
-        //                 <Task key={task.id} task={task} index={index} moveTask={moveTask} />
-        //             ))}
-        //         </div>
-        //     </div>
-        // </DndProvider>
         <DndProvider backend={HTML5Backend}>
             <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
                 {['todo', 'inProgress', 'done'].map((status) => (
