@@ -11,14 +11,7 @@ const Category = ({ tasks, onDrop, category }) => {
     }));
 
     return (
-        <div ref={drop} style={{
-            padding: '16px',
-            width: '300px',
-            minHeight: '400px',
-            backgroundColor: '#f0f0f0',
-            borderRadius: '5px',
-            margin: '0 10px'
-        }}>
+        <div ref={drop} className={`${category === "todo" && "bg-orange-100"} ${category === "inProgress" && "bg-yellow-100"} ${category === "done" && "bg-green-100"} p-2 md:p-5 rounded-lg min-h-96`}>
             <h2>{category}</h2>
             {tasks.map((task) => (
                 <DraggableTask key={task.id} task={task} />

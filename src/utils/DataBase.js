@@ -9,7 +9,7 @@ export const ProjectsData = [
                 "name": "Design new homepage",
                 "description": "Create a responsive homepage layout",
                 "deadline": "2024-05-10",
-                "status": "In Progress",
+                "status": "inProgress",
                 "assigned_to": [
                     "Alice Johnson",
                     "Bob Smith"
@@ -20,7 +20,7 @@ export const ProjectsData = [
                 "name": "Update contact page",
                 "description": "Include an updated contact form",
                 "deadline": "2024-05-15",
-                "status": "To Do",
+                "status": "todo",
                 "assigned_to": [
                     "Charlie Davis"
                 ]
@@ -42,7 +42,7 @@ export const ProjectsData = [
                 "name": "Develop onboarding flow",
                 "description": "Implement onboarding for new users",
                 "deadline": "2024-06-01",
-                "status": "To Do",
+                "status": "todo",
                 "assigned_to": [
                     "Diana Reed"
                 ]
@@ -52,7 +52,7 @@ export const ProjectsData = [
                 "name": "Test push notifications",
                 "description": "Ensure push notifications are working correctly",
                 "deadline": "2024-06-05",
-                "status": "To Do",
+                "status": "done",
                 "assigned_to": [
                     "Erin Smith"
                 ]

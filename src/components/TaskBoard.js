@@ -15,7 +15,7 @@ const TaskBoard = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
+            <div className='grid grid-cols-3 gap-4'>
                 {['todo', 'inProgress', 'done'].map((status) => (
                     <Category
                         key={status}

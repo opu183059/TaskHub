@@ -2,11 +2,7 @@ import create from 'zustand';
 import { devtools } from 'zustand/middleware';
 
 const useTaskStore = create(devtools((set) => ({
-  tasks: [
-    { id: '1', name: 'Task 1', description: 'Description of Task 1', status: 'todo' },
-    { id: '2', name: 'Task 2', description: 'Description of Task 2', status: 'inProgress' },
-    { id: '3', name: 'Task 3', description: 'Description of Task 3', status: 'done' },
-  ],
+  tasks: [],
 
   addTask: (task) => set((state) => ({
     tasks: [...state.tasks, task]

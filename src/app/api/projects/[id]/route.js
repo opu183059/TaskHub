@@ -1,11 +1,15 @@
-import { ProjectsData } from "@/utils/DataBase";
+import { NextResponse } from "next/server";
+import { ProjectsData } from "../../../../utils/DataBase";
 
-export default function handler(req, res) {
-    const { id } = req.query;
-    const project = ProjectsData.find(p => p.id === parseInt(id));
+export async function GET(req, res) {
+    const url = new URL(req.url, `http://${req.headers.host}`);
+    const id = url.pathname.split('/').pop();
+
+    const project = ProjectsData.find(p => p.id === parseInt(id, 10));
+
     if (project) {
-        res.status(200).json(project);
+        return NextResponse.json(project);
     } else {
-        res.status(404).json({ message: "Project not found" });
+        return new NextResponse('Project not found', { status: 404 });
     }
 }

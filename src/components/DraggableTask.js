@@ -1,8 +1,11 @@
 // components/DraggableTask.js
 
+import useTaskStore from '@/store/useTaskStore';
+import { Button } from 'antd';
 import { useDrag } from 'react-dnd';
 
 const DraggableTask = ({ task }) => {
+    const { removeTask } = useTaskStore()
     const [{ isDragging }, drag] = useDrag(() => ({
         type: 'task',
         item: task,
@@ -26,6 +29,7 @@ const DraggableTask = ({ task }) => {
         >
             <strong>{task.name}</strong>
             <p>{task.description}</p>
+            <Button onClick={() => removeTask(task.id)}>Delete</Button>
         </div>
     );
 };
