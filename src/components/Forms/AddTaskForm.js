@@ -34,7 +34,13 @@ const AddTaskForm = ({ setAddModalOpen }) => {
     };
 
     const onFinish = (values) => {
-        addTask({ ...values, id: Date.now().toString() })
+        const formattedValues = {
+            ...values,
+            id: Date.now().toString(),
+            deadline: values.deadline.format('YYYY-MM-DD'),
+            assigned_to: values.assigned_to
+        };
+        addTask(formattedValues);
         setAddModalOpen(false)
         form.resetFields()
     };

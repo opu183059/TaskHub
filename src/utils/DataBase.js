@@ -24,7 +24,17 @@ export const ProjectsData = [
                 "assigned_to": [
                     "Charlie Davis"
                 ]
-            }
+            },
+            {
+                "id": 103,
+                "name": "Develop onboarding flow",
+                "description": "Implement onboarding for new users",
+                "deadline": "2024-06-01",
+                "status": "todo",
+                "assigned_to": [
+                    "Diana Reed"
+                ]
+            },
         ],
         "team_members": [
             "Alice Johnson",

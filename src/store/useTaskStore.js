@@ -20,6 +20,10 @@ const useTaskStore = create(devtools((set) => ({
     tasks: state.tasks.map(task => task.id === id ? { ...task, status: newStatus } : task)
   })),
 
+  clearTasks: () => set(() => ({
+    tasks: []
+  }))
+
 })));
 
 export default useTaskStore;

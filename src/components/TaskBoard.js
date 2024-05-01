@@ -6,7 +6,6 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import Category from '@/components/Category';
 
 const TaskBoard = () => {
-    // const { tasks, moveTask } = useTaskStore();
     const tasks = useTaskStore(state => state.tasks);
     const moveTask = useTaskStore(state => state.moveTask);
 
@@ -15,7 +14,7 @@ const TaskBoard = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-10'>
                 {['todo', 'inProgress', 'done'].map((status) => (
                     <Category
                         key={status}
