@@ -18,7 +18,8 @@ const ProjectsComponent = () => {
     console.log(data);
 
     return (
-        <div className="space-y-4">
+        <div className="mt-10">
+            <h3 className="font-semibold text-xl mb-5">On-going Projects</h3>
             {data.ProjectsData.map((project) => (
                 <ProjectCard key={project.id} project={project} />
             ))}
