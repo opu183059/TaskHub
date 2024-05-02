@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Home() {
   return (
-    <section className="">
+    <section className="pb-6 md:pb-0">
       <div className="container flex flex-col justify-center mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
-        <div className="flex p-6 mr-0 md:mr-5 lg:mr-10 md:p-0 flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+        <div className="flex p-6 my-5 md:my-0 mr-0 md:mr-5 lg:mr-10 md:p-0 flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
           <div className="text-3xl font-bold leading-none sm:text-4xl">
             <h4>Wellcome to</h4>
             <h1 className="text-6xl text-violet-600">Task Hub</h1>

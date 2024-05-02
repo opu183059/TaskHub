@@ -7,6 +7,7 @@ import { Button, Modal } from 'antd';
 import AddTaskForm from './Forms/AddTaskForm';
 import useTaskStore from '@/store/useTaskStore';
 import LoadingSpinner from './LoadingSpinner';
+import TaskFilter from './TaskFilter';
 
 const SingleProject = () => {
     const params = useParams();
@@ -42,14 +43,15 @@ const SingleProject = () => {
 
     return (
         <>
-            <div>
-                <div className='mt-10 flex justify-between'>
-                    <div className=''>
-                        <h1 className='font-medium text-xl mb-3'>{data.name}</h1>
-                        <p className={`${data.status == "In Progress" ? "text-orange-600" : "text-violet-600"} uppercase font-semibold`}>{data.status}</p>
+            <div className='pb-8'>
+                <div className='mt-10 flex justify-between pb-4 border-b-2 mb-4'>
+                    <div className='flex gap-2 items-center'>
+                        <h1 className='font-medium text-xl'>{data.name}</h1>
+                        <p className={`${data.status == "In Progress" ? "text-orange-600" : "text-violet-600"} uppercase font-semibold text-sm`}>({data.status})</p>
                     </div>
                     <Button className='bg-violet-600 border-2 border-violet-600 hover:bg-violet-900 text-white' onClick={() => { setAddModalOpen(true) }}>Add Task</Button>
                 </div>
+                <TaskFilter />
                 <TaskBoard />
             </div>
             {/* add task modal */}

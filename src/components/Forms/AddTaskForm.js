@@ -86,7 +86,7 @@ const AddTaskForm = ({ setAddModalOpen, value, mode }) => {
                 label="Deadline"
                 rules={[{ required: true, message: 'Please select the deadline!' }]}
             >
-                <DatePicker style={{ width: '100%' }} />
+                <DatePicker />
             </Form.Item>
 
             <Form.Item
