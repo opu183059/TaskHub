@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Input, Button, DatePicker, Select } from 'antd';
 import useTaskStore from '@/store/useTaskStore';
+import moment from 'moment';
 
-const AddTaskForm = ({ setAddModalOpen }) => {
+const AddTaskForm = ({ setAddModalOpen, value, mode }) => {
     const [form] = Form.useForm();
-    const { addTask } = useTaskStore();
+    const { addTask, updateTask } = useTaskStore();
+
+    useEffect(() => {
+        if (mode === 'edit' && value) {
+            form.setFieldsValue({
+                ...value,
+                deadline: value.deadline ? moment(value.deadline) : null,
+            });
+        }
+    }, [form, mode, value]);
 
     const options = [
         {
@@ -27,7 +37,7 @@ const AddTaskForm = ({ setAddModalOpen }) => {
             value: 'Diana Reed',
             label: 'Diana Reed',
         },
-    ]
+    ];
 
     const handleChange = (value) => {
         console.log(`selected ${value}`);
@@ -37,13 +47,14 @@ const AddTaskForm = ({ setAddModalOpen }) => {
         const formattedValues = {
             ...values,
             id: Date.now().toString(),
-            deadline: values.deadline.format('YYYY-MM-DD'),
+            deadline: values.deadline ? values.deadline.format('YYYY-MM-DD') : undefined,
             assigned_to: values.assigned_to
         };
-        addTask(formattedValues);
-        setAddModalOpen(false)
-        form.resetFields()
+        mode === 'add' ? addTask(formattedValues) : updateTask(value.id, formattedValues);
+        setAddModalOpen(false);
+        form.resetFields();
     };
+
     return (
         <Form
             form={form}

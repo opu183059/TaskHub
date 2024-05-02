@@ -1,6 +1,7 @@
 "use client"
 import { useQuery } from "react-query";
 import ProjectCard from "./Cards/ProjectCard";
+import LoadingSpinner from "./LoadingSpinner";
 
 const ProjectsComponent = () => {
     const { isLoading, error, data } = useQuery('projects', () =>
@@ -9,8 +10,7 @@ const ProjectsComponent = () => {
         )
     );
 
-    if (isLoading) return 'Loading...';
-
+    if (isLoading) return (<LoadingSpinner />);
     if (error) return 'An error occurred: ' + error.message;
 
     console.log(data);

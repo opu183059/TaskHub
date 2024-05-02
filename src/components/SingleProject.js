@@ -6,6 +6,7 @@ import TaskBoard from './TaskBoard';
 import { Button, Modal } from 'antd';
 import AddTaskForm from './Forms/AddTaskForm';
 import useTaskStore from '@/store/useTaskStore';
+import LoadingSpinner from './LoadingSpinner';
 
 const SingleProject = () => {
     const params = useParams();
@@ -35,7 +36,7 @@ const SingleProject = () => {
         }
     }, [data]);
 
-    if (isLoading) return 'Loading...';
+    if (isLoading) return (<LoadingSpinner />);
     if (error) return 'An error occurred: ' + error.message;
 
 
@@ -60,7 +61,7 @@ const SingleProject = () => {
                 onCancel={() => setAddModalOpen(false)}
                 footer={null}
             >
-                <AddTaskForm setAddModalOpen={setAddModalOpen} />
+                <AddTaskForm setAddModalOpen={setAddModalOpen} value={null} mode='add' />
             </Modal>
         </>
     );
